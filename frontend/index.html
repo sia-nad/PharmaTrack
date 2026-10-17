@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PharmaTrack - Medicine Authenticity DApp</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.2/ethers.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>💊 PharmaTrack</h1>
+    <p class="tagline">Verify medicines on the blockchain. Stop counterfeits.</p>
+    <div class="wallet">
+      <button id="connectBtn">Connect MetaMask</button>
+      <div id="walletInfo" class="muted">Not connected</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Contract</h2>
+      <label>Deployed contract address
+        <input id="contractAddress" placeholder="0x..." />
+      </label>
+      <button id="loadContractBtn">Load Contract</button>
+      <div id="contractInfo" class="muted"></div>
+    </section>
+
+    <section class="card">
+      <h2>🔍 Verify a Medicine (anyone)</h2>
+      <label>Batch code printed on pack
+        <input id="verifyCode" placeholder="e.g. PCM-2026-001" />
+      </label>
+      <button id="verifyBtn">Verify</button>
+      <div id="verifyResult"></div>
+    </section>
+
+    <section class="card">
+      <h2>📦 Look up Batch by ID</h2>
+      <label>Batch ID <input id="lookupId" type="number" min="1" placeholder="1" /></label>
+      <button id="lookupBtn">Get Details &amp; Custody Trail</button>
+      <div id="batchDetails"></div>
+    </section>
+
+    <section class="card">
+      <h2>🏭 Manufacturer: Register Batch</h2>
+      <label>Medicine name <input id="medName" placeholder="Paracetamol 500mg" /></label>
+      <label>Batch code <input id="batchCode" placeholder="PCM-2026-001" /></label>
+      <label>Expiry date <input id="expiry" type="date" /></label>
+      <label>Quantity (units) <input id="qty" type="number" min="1" placeholder="10000" /></label>
+      <button id="registerBtn">Register Batch</button>
+    </section>
+
+    <section class="card">
+      <h2>🚚 Transfer Custody (current holder)</h2>
+      <label>Batch ID <input id="trId" type="number" min="1" /></label>
+      <label>Recipient address <input id="trTo" placeholder="0x..." /></label>
+      <button id="transferBtn">Transfer</button>
+    </section>
+
+    <section class="card">
+      <h2>🛡️ Regulator Panel</h2>
+      <label>Manufacturer address
+        <input id="mfrAddr" placeholder="0x..." />
+      </label>
+      <div class="row">
+        <button id="authBtn">Authorise</button>
+        <button id="revokeBtn" class="danger">Revoke</button>
+      </div>
+      <hr />
+      <label>Batch ID to recall <input id="recallId" type="number" min="1" /></label>
+      <label>Reason <input id="recallReason" placeholder="Contamination found" /></label>
+      <button id="recallBtn" class="danger">Recall Batch</button>
+    </section>
+
+    <section class="card">
+      <h2>Status log</h2>
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
