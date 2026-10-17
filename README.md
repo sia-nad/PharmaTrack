@@ -83,7 +83,7 @@ Open <http://localhost:8000>.
 | Deployer (regulator) | _0x... (fill in)_ |
 | Deployment tx hash | _0x... (fill in)_ |
 
-Deployment has not been recorded in this repository yet. Replace these fields after compiling and deploying through Remix. Do not claim a deployment or add screenshots until those steps have actually been completed.
+Deployment has not been recorded in this repository yet. Replace these fields after compiling and deploying through Remix. The current interface capture shows the local page before wallet connection; it is not deployment or blockchain-data evidence.
 
 > No private keys or seed phrases are stored in this repository.
 
@@ -138,6 +138,11 @@ Save genuine images captured from Remix, MetaMask, and the running interface in 
 | Successful transaction | `screenshots/04-success-tx.png` (capture a confirmed transaction) |
 | Failed transaction | `screenshots/05-failed-tx.png` (capture a rejected/reverted transaction) |
 | Blockchain data shown in UI | `screenshots/06-ui-data.png` (capture batch verification/details) |
+| Local interface before wallet connection | [`screenshots/07-interface-live.png`](screenshots/07-interface-live.png) |
+
+The local interface capture below documents the actual page, with no wallet connected and no blockchain data loaded.
+
+![PharmaTrack interface before wallet connection](screenshots/07-interface-live.png)
 
 ## 8. Notes
 
